@@ -10,6 +10,13 @@
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
+    /*--breakpoint-xs: 320px;*/
+    /*--breakpoint-md: 768px;*/
+    /*--breakpoint-xl: 1024px;*/
+    --breakpoint-*: initial;
+    --breakpoint-tablet: 40rem;
+    --breakpoint-laptop: 64rem;
+    --breakpoint-desktop: 112rem;
 }
 
 @media (prefers-color-scheme: dark) {

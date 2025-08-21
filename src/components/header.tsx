@@ -22,7 +22,7 @@ const nav_data = [
 export const Header = () => {
   return (
     <header className={'h-[90px] border border-b border-[#D6D9DC]'}>
-      <div className={'container flex flex-row items-center justify-between mx-auto'}>
+      <div className={'container mx-auto flex flex-row h-full items-center justify-between'}>
         <Link href={'/'} className={'text-[36px]'}>architecture</Link>
 
         <nav className={'flex flex-row gap-[24px]'}>
