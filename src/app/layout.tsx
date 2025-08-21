@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
-import {Header} from "@/components/header";
-import {Footer} from "@/components/footer";
+import {Header} from "@/components/shared/header";
+import {Footer} from "@/components/shared/footer";
 import React from "react";
 import { Inter } from "next/font/google";
 

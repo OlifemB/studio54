@@ -1,30 +1,13 @@
 import Link from "next/link";
-
-const nav_data = [
-  {
-    title: 'Projects',
-    link: '/projects',
-  },
-  {
-    title: 'News',
-    link: '/news',
-  },
-  {
-    title: 'Blog',
-    link: '/blog',
-  },
-  {
-    title: 'Contacts',
-    link: '/contact',
-  },
-];
+import {nav_data} from "@/common/data/menu";
 
 export const Header = () => {
   return (
     <header
-      className={'h-[90px] border border-b border-[#D6D9DC] text-[#020202] stiky top-0 w-screen bg-white/1 backdrop-blur-md z-20'}>
+      className={'h-[90px] border-0 border-[#D6D9DC] text-[#020202] sticky top-0 w-screen bg-white/1 backdrop-blur-md z-20'}
+    >
       <div className={'container mx-auto flex flex-row h-full items-center justify-between'}>
-        <Link href={'/public'} className={'text-[36px]'}>architecture</Link>
+        <Link href={'/'} className={'text-[36px]'}>architecture</Link>
 
         <nav className={'flex flex-row gap-[24px]'}>
           <ul className={'flex flex-row gap-[35px] text-[16px]'}>
