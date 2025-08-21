@@ -16,9 +16,9 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "r810983k-1337.euw.devtunnels.ms", // 👈 твой devtunnels-хост
+        hostname: "r810983k-1337.euw.devtunnels.ms",
         port: "",
-        pathname: ''
+        pathname: "/uploads/**",
       },
     ],
   },
