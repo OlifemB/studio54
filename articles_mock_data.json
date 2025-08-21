@@ -1,0 +1,316 @@
+{
+    "data": [
+        {
+            "id": 30,
+            "documentId": "snhnlmpipy62b4zgc4quazxd",
+            "Hero": {
+                "id": 30,
+                "title": "The Importance of Sustainable Design in Architectural Projects",
+                "description": "This article examines how smart technology is transforming modern architectural design. It covers the integration of intelligent systems that enhance energy efficiency, security, user comfort, and building performance, shaping the future of responsive and connected environments.",
+                "background": {
+                    "id": 13,
+                    "documentId": "wwqha3xk3z4mc7qrqpda5mn5",
+                    "name": "Снимок экрана от 2025-08-05 16-28-46.png",
+                    "alternativeText": null,
+                    "caption": null,
+                    "width": 962,
+                    "height": 653,
+                    "formats": {
+                        "small": {
+                            "ext": ".png",
+                            "url": "/uploads/small_Snimok_ekrana_ot_2025_08_05_16_28_46_d60283486e.png",
+                            "hash": "small_Snimok_ekrana_ot_2025_08_05_16_28_46_d60283486e",
+                            "mime": "image/png",
+                            "name": "small_Снимок экрана от 2025-08-05 16-28-46.png",
+                            "path": null,
+                            "size": 42.5,
+                            "width": 500,
+                            "height": 339,
+                            "sizeInBytes": 42503
+                        },
+                        "medium": {
+                            "ext": ".png",
+                            "url": "/uploads/medium_Snimok_ekrana_ot_2025_08_05_16_28_46_d60283486e.png",
+                            "hash": "medium_Snimok_ekrana_ot_2025_08_05_16_28_46_d60283486e",
+                            "mime": "image/png",
+                            "name": "medium_Снимок экрана от 2025-08-05 16-28-46.png",
+                            "path": null,
+                            "size": 82.69,
+                            "width": 750,
+                            "height": 509,
+                            "sizeInBytes": 82693
+                        },
+                        "thumbnail": {
+                            "ext": ".png",
+                            "url": "/uploads/thumbnail_Snimok_ekrana_ot_2025_08_05_16_28_46_d60283486e.png",
+                            "hash": "thumbnail_Snimok_ekrana_ot_2025_08_05_16_28_46_d60283486e",
+                            "mime": "image/png",
+                            "name": "thumbnail_Снимок экрана от 2025-08-05 16-28-46.png",
+                            "path": null,
+                            "size": 13.28,
+                            "width": 230,
+                            "height": 156,
+                            "sizeInBytes": 13276
+                        }
+                    },
+                    "hash": "Snimok_ekrana_ot_2025_08_05_16_28_46_d60283486e",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "size": 23.02,
+                    "url": "/uploads/Snimok_ekrana_ot_2025_08_05_16_28_46_d60283486e.png",
+                    "previewUrl": null,
+                    "provider": "local",
+                    "provider_metadata": null,
+                    "createdAt": "2025-08-05T13:28:54.806Z",
+                    "updatedAt": "2025-08-05T13:28:54.806Z",
+                    "publishedAt": "2025-08-05T13:28:54.807Z"
+                }
+            }
+        },
+        {
+            "id": 14,
+            "documentId": "ryyto3qpuc99566dnor56nk8",
+            "Hero": {
+                "id": 14,
+                "title": "integrating-smart-technology-in-architecture",
+                "description": "This article explores the integration of smart technology in modern architectural design. It discusses how innovations like automation, IoT, and energy management systems enhance building functionality, user experience, and sustainability in contemporary spaces.",
+                "background": {
+                    "id": 12,
+                    "documentId": "nosolzn1etuso5qccg9i4nm5",
+                    "name": "smart_home_interior_technology_integrated_interior__e99bf053-f38e-4b41-9e35-5ddda39e4da7_3-min-3.png",
+                    "alternativeText": null,
+                    "caption": null,
+                    "width": 1344,
+                    "height": 896,
+                    "formats": {
+                        "large": {
+                            "ext": ".png",
+                            "url": "/uploads/large_smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1.png",
+                            "hash": "large_smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1",
+                            "mime": "image/png",
+                            "name": "large_smart_home_interior_technology_integrated_interior__e99bf053-f38e-4b41-9e35-5ddda39e4da7_3-min-3.png",
+                            "path": null,
+                            "size": 1366.25,
+                            "width": 1000,
+                            "height": 667,
+                            "sizeInBytes": 1366245
+                        },
+                        "small": {
+                            "ext": ".png",
+                            "url": "/uploads/small_smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1.png",
+                            "hash": "small_smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1",
+                            "mime": "image/png",
+                            "name": "small_smart_home_interior_technology_integrated_interior__e99bf053-f38e-4b41-9e35-5ddda39e4da7_3-min-3.png",
+                            "path": null,
+                            "size": 330.92,
+                            "width": 500,
+                            "height": 333,
+                            "sizeInBytes": 330919
+                        },
+                        "medium": {
+                            "ext": ".png",
+                            "url": "/uploads/medium_smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1.png",
+                            "hash": "medium_smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1",
+                            "mime": "image/png",
+                            "name": "medium_smart_home_interior_technology_integrated_interior__e99bf053-f38e-4b41-9e35-5ddda39e4da7_3-min-3.png",
+                            "path": null,
+                            "size": 749.6,
+                            "width": 750,
+                            "height": 500,
+                            "sizeInBytes": 749602
+                        },
+                        "thumbnail": {
+                            "ext": ".png",
+                            "url": "/uploads/thumbnail_smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1.png",
+                            "hash": "thumbnail_smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1",
+                            "mime": "image/png",
+                            "name": "thumbnail_smart_home_interior_technology_integrated_interior__e99bf053-f38e-4b41-9e35-5ddda39e4da7_3-min-3.png",
+                            "path": null,
+                            "size": 79.37,
+                            "width": 234,
+                            "height": 156,
+                            "sizeInBytes": 79372
+                        }
+                    },
+                    "hash": "smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "size": 612.97,
+                    "url": "/uploads/smart_home_interior_technology_integrated_interior_e99bf053_f38e_4b41_9e35_5ddda39e4da7_3_min_3_f9f21e3de1.png",
+                    "previewUrl": null,
+                    "provider": "local",
+                    "provider_metadata": null,
+                    "createdAt": "2025-08-04T07:56:46.910Z",
+                    "updatedAt": "2025-08-04T07:56:46.910Z",
+                    "publishedAt": "2025-08-04T07:56:46.910Z"
+                }
+            }
+        },
+        {
+            "id": 17,
+            "documentId": "ks4jiqajb69i5guagossajs6",
+            "Hero": {
+                "id": 17,
+                "title": "The Importance of Sustainable Design in Architectural Projects",
+                "description": "In recent years, sustainable design has become a cornerstone of architectural project planning. Sustainable design focuses on creating buildings that minimize environmental impact and promote energy efficiency.",
+                "background": {
+                    "id": 9,
+                    "documentId": "t0mujt6truur2ahur1m6hmjn",
+                    "name": "Rectangle 7.png",
+                    "alternativeText": null,
+                    "caption": null,
+                    "width": 1920,
+                    "height": 738,
+                    "formats": {
+                        "large": {
+                            "ext": ".png",
+                            "url": "/uploads/large_Rectangle_7_b64f1bbf7d.png",
+                            "hash": "large_Rectangle_7_b64f1bbf7d",
+                            "mime": "image/png",
+                            "name": "large_Rectangle 7.png",
+                            "path": null,
+                            "size": 371.85,
+                            "width": 1000,
+                            "height": 384,
+                            "sizeInBytes": 371849
+                        },
+                        "small": {
+                            "ext": ".png",
+                            "url": "/uploads/small_Rectangle_7_b64f1bbf7d.png",
+                            "hash": "small_Rectangle_7_b64f1bbf7d",
+                            "mime": "image/png",
+                            "name": "small_Rectangle 7.png",
+                            "path": null,
+                            "size": 96.38,
+                            "width": 500,
+                            "height": 192,
+                            "sizeInBytes": 96377
+                        },
+                        "medium": {
+                            "ext": ".png",
+                            "url": "/uploads/medium_Rectangle_7_b64f1bbf7d.png",
+                            "hash": "medium_Rectangle_7_b64f1bbf7d",
+                            "mime": "image/png",
+                            "name": "medium_Rectangle 7.png",
+                            "path": null,
+                            "size": 206.96,
+                            "width": 750,
+                            "height": 288,
+                            "sizeInBytes": 206962
+                        },
+                        "thumbnail": {
+                            "ext": ".png",
+                            "url": "/uploads/thumbnail_Rectangle_7_b64f1bbf7d.png",
+                            "hash": "thumbnail_Rectangle_7_b64f1bbf7d",
+                            "mime": "image/png",
+                            "name": "thumbnail_Rectangle 7.png",
+                            "path": null,
+                            "size": 28.92,
+                            "width": 245,
+                            "height": 94,
+                            "sizeInBytes": 28923
+                        }
+                    },
+                    "hash": "Rectangle_7_b64f1bbf7d",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "size": 228.2,
+                    "url": "/uploads/Rectangle_7_b64f1bbf7d.png",
+                    "previewUrl": null,
+                    "provider": "local",
+                    "provider_metadata": null,
+                    "createdAt": "2025-08-04T07:49:38.845Z",
+                    "updatedAt": "2025-08-04T07:49:38.845Z",
+                    "publishedAt": "2025-08-04T07:49:38.845Z"
+                }
+            }
+        },
+        {
+            "id": 18,
+            "documentId": "tlboa54ad62i7lby71ahhwlx",
+            "Hero": {
+                "id": 18,
+                "title": "The Role of Cultural Context in Architectural Design",
+                "description": "This article explores how cultural context influences architectural design, shaping building forms, materials, and spatial organization. It emphasizes the importance of respecting local traditions, history, and identity to create meaningful and contextually relevant architecture.",
+                "background": {
+                    "id": 11,
+                    "documentId": "cy1e5vag20ti6n13cbkgs8xh",
+                    "name": "photo-1659522847229-2b08378c7e55.jpeg",
+                    "alternativeText": null,
+                    "caption": null,
+                    "width": 9280,
+                    "height": 6944,
+                    "formats": {
+                        "large": {
+                            "ext": ".jpeg",
+                            "url": "/uploads/large_photo_1659522847229_2b08378c7e55_aa3f014291.jpeg",
+                            "hash": "large_photo_1659522847229_2b08378c7e55_aa3f014291",
+                            "mime": "image/jpeg",
+                            "name": "large_photo-1659522847229-2b08378c7e55.jpeg",
+                            "path": null,
+                            "size": 181.39,
+                            "width": 1000,
+                            "height": 748,
+                            "sizeInBytes": 181386
+                        },
+                        "small": {
+                            "ext": ".jpeg",
+                            "url": "/uploads/small_photo_1659522847229_2b08378c7e55_aa3f014291.jpeg",
+                            "hash": "small_photo_1659522847229_2b08378c7e55_aa3f014291",
+                            "mime": "image/jpeg",
+                            "name": "small_photo-1659522847229-2b08378c7e55.jpeg",
+                            "path": null,
+                            "size": 54.37,
+                            "width": 500,
+                            "height": 374,
+                            "sizeInBytes": 54370
+                        },
+                        "medium": {
+                            "ext": ".jpeg",
+                            "url": "/uploads/medium_photo_1659522847229_2b08378c7e55_aa3f014291.jpeg",
+                            "hash": "medium_photo_1659522847229_2b08378c7e55_aa3f014291",
+                            "mime": "image/jpeg",
+                            "name": "medium_photo-1659522847229-2b08378c7e55.jpeg",
+                            "path": null,
+                            "size": 111.15,
+                            "width": 750,
+                            "height": 561,
+                            "sizeInBytes": 111145
+                        },
+                        "thumbnail": {
+                            "ext": ".jpeg",
+                            "url": "/uploads/thumbnail_photo_1659522847229_2b08378c7e55_aa3f014291.jpeg",
+                            "hash": "thumbnail_photo_1659522847229_2b08378c7e55_aa3f014291",
+                            "mime": "image/jpeg",
+                            "name": "thumbnail_photo-1659522847229-2b08378c7e55.jpeg",
+                            "path": null,
+                            "size": 10.55,
+                            "width": 208,
+                            "height": 156,
+                            "sizeInBytes": 10550
+                        }
+                    },
+                    "hash": "photo_1659522847229_2b08378c7e55_aa3f014291",
+                    "ext": ".jpeg",
+                    "mime": "image/jpeg",
+                    "size": 9701.72,
+                    "url": "/uploads/photo_1659522847229_2b08378c7e55_aa3f014291.jpeg",
+                    "previewUrl": null,
+                    "provider": "local",
+                    "provider_metadata": null,
+                    "createdAt": "2025-08-04T07:53:19.668Z",
+                    "updatedAt": "2025-08-04T07:53:19.668Z",
+                    "publishedAt": "2025-08-04T07:53:19.668Z"
+                }
+            }
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 4
+        }
+    }
+}
