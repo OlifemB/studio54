@@ -1,11 +1,13 @@
 import {SectionHomeHero} from "@/sections/home/hero";
 import {SectionHomePosts} from "@/sections/home/posts";
-import ArticlesPage from "@/components/articles/articles";
+import ArticlesList from "@/components/articles/articles";
+import Homepage from "@/components/hnomepage/homepage";
 
 export default function Home() {
   return (
     <>
-      <ArticlesPage/>
+      {/*<Homepage/>*/}
+      <ArticlesList/>
       {/*<SectionHomeHero/>*/}
       {/*<SectionHomePosts/>*/}
     </>

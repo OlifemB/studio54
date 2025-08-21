@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type StrapiImageFormat = {
   url: string;
@@ -37,7 +38,7 @@ type StrapiResponse<T> = {
   data: T[];
 };
 
-export default function ArticlesPage() {
+export default function ArticlesList() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,6 +56,7 @@ export default function ArticlesPage() {
         setLoading(false);
       }
     }
+
     fetchArticles();
   }, []);
 
@@ -64,33 +66,43 @@ export default function ArticlesPage() {
   const baseUrl =
     process.env.NEXT_PUBLIC_STRAPI_BASE_URL?.replace("/api", "") || "";
 
-  return (
-    <div className="grid gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
-      {articles.map((item) => {
-        const hero = item.Hero;
-        const bgUrl =
-          hero?.background?.formats?.medium?.url ||
-          hero?.background?.url ||
-          "/placeholder.png";
-        const fullUrl = bgUrl.startsWith("http") ? bgUrl : `${baseUrl}${bgUrl}`;
 
-        return (
-          <div
-            key={item.id}
-            className="bg-white shadow rounded-2xl overflow-hidden flex flex-col"
-          >
-            <div className="relative w-full h-48">
-              <img
-                src={fullUrl || ''}
-              />
-            </div>
-            <div className="p-4 flex flex-col flex-1">
-              <h2 className="text-lg font-semibold mb-2">{hero?.title}</h2>
-              <p className="text-gray-600 flex-1">{hero?.description}</p>
-            </div>
-          </div>
-        );
-      })}
+  return (
+    <div className={'container mx-auto py-6'}>
+      <div className="grid gap-6 grid-cols-3">
+        {articles.map((item) => {
+          const hero = item.Hero;
+          const bgUrl =
+            hero?.background?.formats?.medium?.url ||
+            hero?.background?.url ||
+            null;
+
+          const fullUrl = bgUrl
+            ? (bgUrl.startsWith("http") ? bgUrl : `${baseUrl}${bgUrl}`)
+            : "/placeholder.png";
+
+          return (
+            <Link
+              key={item.documentId}
+              href={`/articles/${item.documentId}`}
+              className="block rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white"
+            >
+              <div className="relative w-full h-48 overflow-hidden">
+                <Image
+                  src={fullUrl}
+                  alt={hero?.background?.alternativeText || hero?.title || "Article image"}
+                  fill
+                  className="object-cover  group-hover/item:scale-110 duration-300"
+                />
+              </div>
+              <div className="p-4 flex flex-col flex-1">
+                <h2 className="text-lg font-semibold mb-2">{hero?.title}</h2>
+                <p className="text-gray-600 flex-1">{hero?.description}</p>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }
