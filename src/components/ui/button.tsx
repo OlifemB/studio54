@@ -9,12 +9,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-                                                className = "",
-                                                children,
-                                                variant = "default",
-                                                shape = "default",
-                                                ...props
-                                              }) => {
+  className = "",
+  children,
+  variant = "default",
+  shape = "default",
+  ...props
+}) => {
   let variantStyles = "";
 
   switch (variant) {
