@@ -28,8 +28,8 @@ export const Button: React.FC<ButtonProps> = ({
     case "outlined":
       variantStyles =
         "border border-black text-black bg-transparent " +
-        "hover:border-[#2969CA] hover:text-[#2969CA] " +
-        "active:bg-white active:border-[#15458D] active:text-[#15458D]";
+        "hover:border-[#2969CA] hover:bg-[#2969CA] hover:text-[#FFF] " +
+        "active:border-[#15458D] active:text-[#FFF] active:bg-[#15458D]";
       break;
 
     case "text":
@@ -56,7 +56,7 @@ export const Button: React.FC<ButtonProps> = ({
     "inline-flex items-center justify-center text-[16px] font-medium " +
     "px-[50px] py-[20px] transition-colors duration-200 " +
     "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2969CA] " +
-    "disabled:opacity-50 disabled:pointer-events-none";
+    "disabled:opacity-50 disabled:pointer-events-none outline-none";
 
   return (
     <button
