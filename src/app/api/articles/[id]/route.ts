@@ -1,47 +1,56 @@
-import { NextResponse } from "next/server";
-import qs from "qs";
+import Strapi from "strapi-sdk-js";
+
+const strapi = new Strapi({
+  url: "https://r810983k-1337.euw.devtunnels.ms",
+});
 
 interface Params {
-  params: {
-    id: string;
-  };
+  params: { id: string };
 }
 
-export async function GET(req: Request, { params }: Params) {
-  const { id } = params;
-
-  const query = qs.stringify(
-    {
-      status: "published",
-      populate: {
-        Hero: { populate: "*" },
-        images: { populate: "*" },
-      },
-      fields: ["id", "documentId", "content"],
-    },
-    { encodeValuesOnly: true }
-  );
-
-  const baseUrl =
-    process.env.STRAPI_BASE_URL || "https://r810983k-1337.euw.devtunnels.ms/api";
+export async function GET(req: Request, context: Promise<Params>) {
+  const { params } = await context;
+  const id = params.id;
 
   try {
-    const res = await fetch(`${baseUrl}/articles/${id}?${query}`, {
-      headers: {
-        "Content-Type": "application/json",
+    const article = await strapi.findOne("articles", id, {
+      fields: ["id", "documentId"],
+      populate: {
+        Hero: {
+          fields: ["*"],
+          populate: "*",
+        },
+        content: {
+          on: {
+            "ui-grid.text": { populate: "*" },
+            "ui-grid.text-over-image": { populate: "*" },
+            "ui-grid.image": { populate: "*" },
+            "ui-grid.text-under-image": { populate: "*" },
+          },
+        },
+        tags: { populate: "*" },
+        preview: { fields: ["*"] },
+        recommendations: { populate: "*" },
       },
     });
 
-    if (!res.ok) {
-      return NextResponse.json(
-        { error: `Failed to fetch article: ${res.status}` },
-        { status: res.status }
-      );
+    if (!article) {
+      return new Response(JSON.stringify({ error: "Article not found" }), {
+        status: 404,
+        headers: { "Content-Type": "application/json" },
+
+      });
     }
 
-    const data = await res.json();
-    return NextResponse.json(data);
-  } catch (err: any) {
-    return NextResponse.json({ error: err.message }, { status: 500 });
+    return new Response(JSON.stringify(article), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (error) {
+    console.error("Error fetching article:", error);
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
