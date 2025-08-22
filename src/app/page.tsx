@@ -9,8 +9,10 @@ export default function Home() {
   return (
     <>
       <Homepage/>
+      <div className={'bg-[#181818] pt-[80px]'}>
       <TagsList/>
       <ArticlesList/>
+      </div>
       {/*<SectionHomeHero/>*/}
       {/*<SectionHomePosts/>*/}
     </>

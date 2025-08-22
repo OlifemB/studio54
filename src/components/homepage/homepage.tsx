@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import Image from "next/image";
 
 type UploadFile = {
@@ -32,7 +32,7 @@ export default function Homepage() {
   useEffect(() => {
     const fetchHomepage = async () => {
       try {
-        const res = await fetch("/api/homepage", { cache: "no-store" });
+        const res = await fetch("/api/homepage", {cache: "no-store"});
         const json = await res.json();
         console.log("Homepage response:", json);
 
@@ -57,40 +57,44 @@ export default function Homepage() {
   const fgUrl = hero.foreground?.url ? `${baseUrl}${hero.foreground.url}` : "";
 
   return (
-    <section className="relative w-full h-[80vh] flex items-center justify-center bg-gray-900 text-white">
-      {bgUrl && (
-        <Image
-          src={bgUrl}
-          alt={hero.background?.alternativeText || "Background"}
-          fill
-          className="object-cover"
-          priority
-        />
-      )}
+    <section id={'hero'} className={'relative w-full h-[748px] bg-[#F0F0F0] text-[303030]"'}>
 
-      <div className="absolute inset-0 bg-black/50" />
+      <div className={'container mx-auto h-full'}>
+        {bgUrl && (
+          <div className={'mt-[109px] w-full h-auto fill-[#D7DADE]'}>
+            <img
+              src={bgUrl}
+              alt={hero.background?.alternativeText || "Background"}
+            />
+          </div>
+        )}
 
-      <div className="relative z-10 max-w-3xl text-center px-4">
-        <h1 className="text-4xl font-bold mb-4">Welcome</h1>
-        {hero.decritpion && (
-          <p className="text-lg text-gray-200 mb-6">{hero.decritpion}</p>
-        )}
-        {hero.action && (
-          <a
-            href={hero.action.link}
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition"
-          >
-            {hero.action.label}
-          </a>
-        )}
+        <div className="relative z-10 text-left px-4">
+          <div
+            className={'absolute left-[55%] top-[171px] w-[580px] flex flex-col gap-[27px] items-start justify- max-w-[50%]'}>
+            {hero.decritpion && (
+              <p className="text-lg  mb-6">{hero.decritpion}</p>
+            )}
+            {hero.action && (
+              <a
+                href={hero.action.link}
+                className="inline-block bg-blue-600 text-white hover:bg-blue-700 font-semibold py-3 px-6 rounded-full transition"
+              >
+                {hero.action.label}
+              </a>
+            )}
+          </div>
+        </div>
+
+
         {fgUrl && (
           <div className="mt-8 flex justify-center">
             <Image
               src={fgUrl}
               alt={hero.foreground?.alternativeText || "Foreground"}
-              width={400}
-              height={300}
-              className="rounded-lg shadow-lg"
+              width={1712}
+              height={824}
+              className={'absolute w-[1712px] h-[824px] left-[55%] transform -translate-x-[80%] -bottom-[90px] z-10'}
             />
           </div>
         )}

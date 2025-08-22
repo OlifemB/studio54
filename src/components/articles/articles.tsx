@@ -81,7 +81,7 @@ export default function ArticlesList() {
             <Link
               key={item.documentId}
               href={`/articles/${item.documentId}`}
-              className="block rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow bg-white"
+              className="block overflow-hidden"
             >
               <div className="relative w-full h-48 overflow-hidden">
                 <Image
@@ -92,8 +92,8 @@ export default function ArticlesList() {
                 />
               </div>
               <div className="p-4 flex flex-col flex-1">
-                <h2 className="text-lg font-semibold mb-2">{hero?.title}</h2>
-                <p className="text-gray-600 flex-1">{hero?.description}</p>
+                <h2 className="text-gray-200 text-lg font-semibold mb-2">{hero?.title}</h2>
+                <p className="text-gray-200 flex-1 text-[12px]">{hero?.description}</p>
               </div>
             </Link>
           );

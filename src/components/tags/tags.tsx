@@ -51,7 +51,7 @@ export default function TagsList() {
         <Link
           key={tag.documentId}
           href={`/tags/${tag.seo.slug.replace(/^\//, "")}`}
-          className="px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition"
+          className="px-4 py-2 rounded-full  text-gray-400 text-sm font-medium border border-transparent transition hover:border-white duration-300 hover:text-white"
         >
           {tag.system_title}
         </Link>
