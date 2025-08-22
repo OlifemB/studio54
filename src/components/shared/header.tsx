@@ -4,7 +4,7 @@ import {nav_data} from "@/common/data/menu";
 export const Header = () => {
   return (
     <header
-      className={'h-[90px] border-0 border-[#D6D9DC] text-[#020202] sticky top-0 w-screen bg-white/1 backdrop-blur-md z-20'}
+      className={'h-[90px] border-0 border-[#D6D9DC] text-[#020202] sticky top-0 w-screen bg-[#f0f0f0]/80 backdrop-blur-md z-20'}
     >
       <div className={'container mx-auto flex flex-row h-full items-center justify-between'}>
         <Link href={'/'} className={'text-[36px]'}>architecture</Link>
