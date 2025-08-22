@@ -1,36 +1,20 @@
-import {NextResponse} from "next/server";
-import qs from "qs";
+import { NextResponse } from "next/server";
+import Strapi from "strapi-sdk-js";
+
+const strapi = new Strapi({
+  url:  "https://r810983k-1337.euw.devtunnels.ms",
+});
 
 export async function GET() {
-  const query = qs.stringify(
-    {
-      status: "published",
-      populate: {Hero: {populate: "*"}},
-      fields: ["id", "documentId"],
-    },
-    {encodeValuesOnly: true}
-  );
-
-  const baseUrl =
-    process.env.STRAPI_BASE_URL || "https://r810983k-1337.euw.devtunnels.ms/api";
-
   try {
-    const res = await fetch(`${baseUrl}/articles?${query}`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
+    const articles = await strapi.find("articles", {
+      populate: { Hero: { populate: "*" } },
+      fields: ["id", "documentId"],
     });
 
-    if (!res.ok) {
-      return NextResponse.json(
-        {error: `Failed to fetch: ${res.status}`},
-        {status: res.status}
-      );
-    }
-
-    const data = await res.json();
-    return NextResponse.json(data);
+    return NextResponse.json(articles);
   } catch (err: any) {
-    return NextResponse.json({error: err.message}, {status: 500});
+    console.error("Strapi fetch error:", JSON.stringify(err, null, 2));
+    return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
