@@ -1,8 +1,6 @@
-"use client";
-
-import {useEffect, useState} from "react";
 import Image from "next/image";
-import {useParams} from "next/navigation";
+import {notFound} from "next/navigation";
+import ContentRenderer from "@/components/articles/content_render";
 
 interface Media {
   url: string;
@@ -10,122 +8,113 @@ interface Media {
 }
 
 interface Hero {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   background?: Media;
   foreground?: Media;
-  action?: {
-    link: string;
-    label: string;
-  };
+  action?: { link: string; label: string };
 }
 
 interface Article {
   id: number;
   documentId: string;
   Hero?: Hero;
-  content?: string; // основной текст статьи
-  images?: Media[]; // дополнительные картинки
+  content?: string;
+  images?: Media[];
 }
 
-export default function ArticlePage() {
-  const params = useParams();
-  const {id} = params; // <-- documentId из URL
-  const [article, setArticle] = useState<Article | null>(null);
-  const [loading, setLoading] = useState(true);
+interface ApiResponse<T> {
+  data: T;
+}
 
-  useEffect(() => {
-    if (!id) return;
+function getStrapiOrigin() {
+  const raw = process.env.NEXT_PUBLIC_STRAPI_BASE_URL || "";
 
-    async function fetchArticle() {
-      try {
-        const res = await fetch(`/api/articles/${id}`);
-        const data = await res.json();
-        setArticle(data?.data || null);
-      } catch (error) {
-        console.error("Ошибка загрузки статьи:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
+  return raw.replace(/\/$/, "").replace(/\/api$/, "");
+}
 
-    fetchArticle();
-  }, [id]);
+const STRAPI_ORIGIN = getStrapiOrigin();
 
-  if (loading)
-    return <p className="p-4">Загрузка...</p>;
+function mediaUrl(path?: string) {
+  if (!path) return "";
+  return path.startsWith("http") ? path : `${STRAPI_ORIGIN}${path}`;
+}
 
-  if (!article)
-    return <p className="p-4">Статья не найдена</p>;
+async function getArticle(id: string) {
+  const res = await fetch(`http://localhost:3000/api/articles/${id}`, {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    if (res.status === 404) notFound();
+    throw new Error("Failed to fetch article");
+  }
+
+  const json = (await res.json()) as ApiResponse<Article>;
+  return json.data;
+}
+
+export default async function ArticlePage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const {id} = await params;
+  const article = await getArticle(id);
+
+  if (!article) notFound();
 
   const hero = article.Hero;
-  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_BASE_URL?.replace("/api", "") || "";
+  const preview = article.preview;
 
-  const backgroundUrl = hero?.background?.url ? `${baseUrl}${hero.background.url}` : null;
-  const foregroundUrl = hero?.foreground?.url ? `${baseUrl}${hero.foreground.url}` : null;
-
+  const imageUrl = mediaUrl(preview?.url);
 
   return (
     <div className="container mx-auto py-6">
-      {/* Hero Background */}
-      {backgroundUrl && (
+      {imageUrl && (
         <div className="relative w-full h-72 mb-6">
           <Image
-            src={backgroundUrl}
-            alt={hero?.background?.alternativeText || hero?.title || "Article Hero"}
+            src={imageUrl}
+            alt={hero?.background?.alternativeText || "Hero background"}
             fill
             className="object-cover rounded-2xl shadow-md"
+            priority
           />
         </div>
       )}
 
-      {/* Title */}
-      <h1 className="text-3xl font-bold mb-4">{hero?.title}</h1>
+      {hero?.title && <h1 className="text-3xl font-bold mb-4">{hero.title}</h1>}
 
-      {/* Description */}
-      {hero?.description && <p className="text-lg text-gray-700 mb-6">{hero.description}</p>}
-
-      {/* Foreground Image */}
-      {foregroundUrl && (
-        <div className="relative w-80 h-80 mx-auto mb-6">
-          <Image
-            src={foregroundUrl}
-            alt={hero?.foreground?.alternativeText || "Foreground"}
-            fill
-            className="object-contain rounded-xl"
-          />
-        </div>
+      {hero?.description && (
+        <p className="text-lg text-gray-700 mb-6">{hero.description}</p>
       )}
 
-      {/* Основной текст статьи */}
-      {article.content && (
-        <div className="prose prose-lg max-w-none mb-6">
-          <div dangerouslySetInnerHTML={{__html: article.content}}/>
-        </div>
-      )}
+      {article.content && <ContentRenderer content={article.content}/>}
 
-      {/* Дополнительные картинки */}
-      {article.images && article.images.length > 0 && (
+      {article.images?.length ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {article.images.map((img, idx) => (
-            <div key={idx} className="relative w-full h-64">
-              <Image
-                src={`${baseUrl}${img.url}`}
-                alt={img.alternativeText || `image-${idx}`}
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-          ))}
+          {article.images.map((img, i) => {
+            const src = mediaUrl(img.url);
+            if (!src) return null;
+            return (
+              <div key={i} className="relative w-full h-64">
+                <Image
+                  src={src}
+                  alt={img.alternativeText || `image-${i}`}
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            );
+          })}
         </div>
-      )}
+      ) : null}
 
-      {/* CTA кнопка */}
-      {hero?.action?.link && hero?.action?.label && (
+      {hero?.action && (
         <div className="mt-8">
           <a
             href={hero.action.link}
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition"
           >
             {hero.action.label}
           </a>

@@ -63,10 +63,6 @@ export default function ArticlesList() {
   if (loading) return <p className="p-4">Loading articles...</p>;
   if (error) return <p className="p-4 text-red-500">Error: {error}</p>;
 
-  const baseUrl =
-    process.env.NEXT_PUBLIC_STRAPI_BASE_URL?.replace("/api", "") || "";
-
-
   return (
     <div className={'container mx-auto py-6'}>
       <div className="grid gap-6 grid-cols-3">
@@ -78,7 +74,7 @@ export default function ArticlesList() {
             null;
 
           const fullUrl = bgUrl
-            ? (bgUrl.startsWith("http") ? bgUrl : `${baseUrl}${bgUrl}`)
+            ? (bgUrl.startsWith("http") ? bgUrl : `${process.env.NEXT_PUBLIC_STRAPI_BASE_URL}${bgUrl}`)
             : "/placeholder.png";
 
           return (

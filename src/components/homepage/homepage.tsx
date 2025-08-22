@@ -3,29 +3,26 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
+type UploadFile = {
+  url: string;
+  alternativeText?: string;
+};
+
 type Hero = {
-  id: number;
-  __component: string;
+  id: string;
   decritpion: string;
   action?: {
-    id: number;
+    id: string;
     link: string;
     label: string;
   };
-  foreground?: {
-    url: string;
-    alternativeText?: string;
-  };
-  background?: {
-    url: string;
-    alternativeText?: string;
-  };
+  foreground?: UploadFile;
+  background?: UploadFile;
 };
 
 type HomepageData = {
-  id: number;
   documentId: string;
-  system_title: string;
+  createdAt: string;
   hero: Hero;
 };
 
@@ -39,8 +36,8 @@ export default function Homepage() {
         const json = await res.json();
         console.log("Homepage response:", json);
 
-        // GraphQL структура: json.data.homepage.data
-        setHomepage(json.data.homepage.data);
+        // API возвращает homePage напрямую
+        setHomepage(json);
       } catch (error) {
         console.error("Failed to fetch homepage", error);
       }
@@ -54,13 +51,13 @@ export default function Homepage() {
   }
 
   const hero = homepage.hero;
-  const baseUrl = process.env.NEXT_PUBLIC_STRAPI_BASE_URL?.replace("/api", "");
+  const baseUrl =
+    process.env.NEXT_PUBLIC_STRAPI_BASE_URL?.replace("/api", "") || "";
   const bgUrl = hero.background?.url ? `${baseUrl}${hero.background.url}` : "";
   const fgUrl = hero.foreground?.url ? `${baseUrl}${hero.foreground.url}` : "";
 
   return (
     <section className="relative w-full h-[80vh] flex items-center justify-center bg-gray-900 text-white">
-      {/* Background image */}
       {bgUrl && (
         <Image
           src={bgUrl}
@@ -71,12 +68,10 @@ export default function Homepage() {
         />
       )}
 
-      {/* Overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content */}
       <div className="relative z-10 max-w-3xl text-center px-4">
-        <h1 className="text-4xl font-bold mb-4">{homepage.system_title}</h1>
+        <h1 className="text-4xl font-bold mb-4">Welcome</h1>
         {hero.decritpion && (
           <p className="text-lg text-gray-200 mb-6">{hero.decritpion}</p>
         )}
@@ -88,7 +83,6 @@ export default function Homepage() {
             {hero.action.label}
           </a>
         )}
-        {/* Foreground image */}
         {fgUrl && (
           <div className="mt-8 flex justify-center">
             <Image
